@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+            background-image: url(https://st2.depositphotos.com/2459687/10982/v/450/depositphotos_109820350-stock-illustration-abstract-math-number-background-vector.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+        }
+        input, select, button {
+            margin: 10px;
+            font-size: 16px;
+            padding: 5px;
+            color: orangered;
+            background: black;
+
+        }
+        input::placeholder 
+        {
+            color: ghostwhite; 
+        }
+    </style>
+</head>
+<body>
+
+    <h1><u>SIMPLE CALCULATOR</u></h1>
+
+    <input type="number" id="num1" placeholder="Enter the first digit"><br>
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select><br>
+    <input type="number" id="num2" placeholder="Enter the second digit"><br>
+    <button onclick="calculate()">=</button>
+
+    <!-- <h3>Result:</h3> -->
+    <div id="result"></div>
+
+    <script>
+        function add(a, b) {
+            return a + b;
+        }
+
+        function subtract(a, b) {
+            return a - b;
+        }
+
+        function multiply(a, b) {
+            return a * b;
+        }
+
+        function divide(a, b) {
+            if (b === 0) {
+                return "Cannot divide by zero";
+            }
+            return a / b;
+        }
+
+        function calculate() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var operator = document.getElementById("operator").value;
+            var result1 = document.getElementById("result");
+
+            var result;
+
+            switch (operator) {
+                case "+":
+                    result = add(num1, num2);
+                    break;
+                case "-":
+                    result = subtract(num1, num2);
+                    break;
+                case "*":
+                    result = multiply(num1, num2);
+                    break;
+                case "/":
+                    result = divide(num1, num2);
+                    break;
+                default:
+                    result = "Invalid operator";
+                    break;
+            }
+
+            result1.textContent = "Result: " + result;
+        }
+    </script>
+
+</body>
+</html>
