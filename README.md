@@ -9,6 +9,8 @@ It is built using HTML for the structure, CSS for styling, and JavaScript for fu
 2.Subtraction
 3.Multiplication
 4.Division
+
+
 **Usage**
 Open the calculator in your browser.
 Use the numeric keypad and operation buttons to perform calculations.
